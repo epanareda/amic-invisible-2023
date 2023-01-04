@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reis / amic invisible 2023</title>
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+    <form class="m-5 needs-validation" onsubmit="return false">
+        <label class="mb-2" for="user">
+            USUARI
+        </label>
+        <input id="user" class="w-100 form-control" type="text" required>
+        <label class="mt-4 mb-2" for="passowrd">
+            MOT DE PAS
+        </label>
+        <input id="password" class="w-100 form-control" type="password" required>
+        <div class="mt-5 d-flex justify-content-center mb-5">
+            <button class="btn btn-primary px-3 py-1">
+                ENTRA
+            </button>
+        </div>
+    </form>
+
+    
+
+    <!-- Modal -->
+    <div id="modal" hidden>
+        <div class="position-absolute top-0 h-100 w-100 bg-dark opacity-75">
+        </div>
+        <div class="position-absolute top-0 h-100 w-100 d-flex justify-content-center align-items-center">
+            <div class="container border border-3 rounded p-3 bg-white w-75 text-center">
+                <h4>Benvingut <strong>ESTEVE ROIG ALBERTI</strong>!!!</h4>
+                <a id="user-link" class="btn btn-primary mt-3 mb-2" href="#">
+                    CONTINUAR
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="js/log-in.js"></script>
+</html>

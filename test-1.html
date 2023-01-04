@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reis / amic invisible 2023</title>
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body class="overflow-hidden">
+    <h1 class="text-center mt-4 mx-5 fw-bold">
+        CALCULADORA HUMANA
+    </h1>
+
+    <hr class="mx-5">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <p class="p-0 m-0 ps-2">
+                    Temps restant: <strong id="seconds">60</strong><strong>.</strong><strong id="mil-seconds">00</strong>s
+                </p>
+            </div>
+            <div class="col">
+                <p class="p-0 m-0 ps-3">
+                    Puntuació: <strong id="score">00</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-absolute w-100 h-75 bottom-0 left-0 border bg-warning pt-3">
+        <div class="container">
+            <div class="row py-5 bg-light rounded m-3 position-relative">
+                <div id="operation-screen" class="col overflow-hidden position-absolute top-0 left-0 d-flex h-100 w-100 justify-content-start align-items-center px-5 calculator-btn text-secondary">
+                    10 x 10 =
+                </div>
+                <div id="calculator-screen" class="col overflow-hidden position-absolute top-0 left-0 d-flex h-100 w-100 justify-content-end align-items-center px-5 calculator-btn fw-bold">
+                    0
+                </div>
+            </div>
+            <div class="row mx-1 my-3">
+                <div class="col">
+                    <button id="btn-7" class="btn btn-secondary w-100 h-100 py-2 calculator-btn">
+                        7
+                    </button>
+                </div>
+                <div class="col">
+                    <button id="btn-8" class="btn btn-secondary w-100 h-100 py-2 calculator-btn">
+                        8
+                    </button>
+                </div>
+                <div class="col">
+                    <button id="btn-9" class="btn btn-secondary w-100 h-100 py-2 calculator-btn">
+                        9
+                    </button>
+                </div>
+            </div>
+            <div class="row mx-1 my-3">
+                <div class="col">
+                    <button id="btn-4" class="btn btn-secondary w-100 h-100 py-2 calculator-btn">
+                        4
+                    </button>
+                </div>
+                <div class="col">
+                    <button id="btn-5" class="btn btn-secondary w-100 h-100 py-2 calculator-btn">
+                        5
+                    </button>
+                </div>
+                <div class="col">
+                    <button id="btn-6" class="btn btn-secondary w-100 h-100 py-2 calculator-btn">
+                        6
+                    </button>
+                </div>
+            </div>
+            <div class="row mx-1 my-3">
+                <div class="col">
+                    <button id="btn-1" class="btn btn-secondary w-100 h-100 py-2 calculator-btn">
+                        1
+                    </button>
+                </div>
+                <div class="col">
+                    <button id="btn-2" class="btn btn-secondary w-100 h-100 py-2 calculator-btn">
+                        2
+                    </button>
+                </div>
+                <div class="col">
+                    <button id="btn-3" class="btn btn-secondary w-100 h-100 py-2 calculator-btn">
+                        3
+                    </button>
+                </div>
+            </div>
+            <div class="row mx-1 mt-3">
+                <div class="col-4">
+                    <button id="btn-0" class="btn btn-secondary w-100 h-100 py-2 calculator-btn">
+                        0
+                    </button>
+                </div>
+                <div class="col-4">
+                    <button id="btn-delete" class="btn btn-danger w-100 h-100 py-1 calculator-checker px-0">
+                        BORRA
+                    </button>
+                </div>
+                <div class="col-4">
+                    <button id="btn-check" class="btn btn-primary w-100 h-100 py-1 calculator-checker px-0">
+                        CHECK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="overflow-hidden" hidden>
+        <div class="position-absolute top-0 h-100 w-100 bg-dark opacity-75">
+        </div>
+        <div class="position-absolute top-0 h-100 w-100 d-flex justify-content-center align-items-center">
+            <h1 class="display-1 fw-bold text-light">
+                TEMPS!
+            </h1>
+        </div>
+
+        <div id="modal-panel" class="position-absolute top-100 h-100 w-100 d-flex justify-content-center align-items-center">
+            <div class="container border border-3 rounded p-3 bg-white w-75 text-center">
+                <h4>
+                    Puntuació: <strong id="score-modal">00</strong>
+                </h4>
+                <hr>
+                <h6>
+                    Com has quedat?
+                </h6>
+                <div class="d-flex justify-content-center align-items-center">
+                    <a class="btn btn-primary mt-2 mb-4 ms-2 small-font-size" href="test-2-instructions.html">
+                        GUANYADOR
+                    </a>
+                    <a class="btn btn-danger mt-2 mb-4 ms-2 small-font-size" href="test-2-loser.html">
+                        PERDEDOR
+                    </a>
+                </div>
+                <h6>
+                    O heu empatat?
+                </h6>
+                <div class="d-flex justify-content-between align-items-center flex-column">
+                    <a class="btn btn-secondary mt-2 mb-2 small-font-size" href="test-1.html">
+                        DESEMPATAR
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="js/test-1.js"></script>
+</html>
