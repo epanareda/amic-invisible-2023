@@ -8,14 +8,22 @@ let calculator_screen = document.getElementById("calculator-screen");
 let btn_delete = document.getElementById("btn-delete");
 let btn_check = document.getElementById("btn-check");
 
+let correct_sound = new Audio("../sounds/correct.mp3");
+let incorrect_sound = new Audio("../sounds/incorrect.mp3");
+
+let modal_error = document.getElementById("modal-error");
+let correct_result = document.getElementById("correct-result");
+let modal_error_close = document.getElementById("btn-close-error-modal");
+
 let modal = document.getElementById("modal");
 let modal_panel = document.getElementById("modal-panel");
 let score_modal = document.getElementById("score-modal");
 
 let operation_solution;
 let num = [];
+let num1, op, num2, sol;
 let score = 0;
-let end_time = new Date().getTime() + (60 * 1000);
+let end_time = new Date().getTime() + (1 * 1000);
 
 set_operation();
 let timer = setInterval(update_timer, 10);
@@ -48,14 +56,22 @@ btn_check.addEventListener("click", function() {
     if(Number(num.join("")) == operation_solution) {
         score++;
         // console.log("Score: " + score);
+        correct_sound.play()
         update_score();
     } else {
-        alert(operation_solution);
+        // alert(operation_solution);
+        incorrect_sound.play()
+        correct_result.innerHTML = num1 + " " + op + " " + num2 + " = " + sol;
+        modal_error.hidden = false;
     }
     
     set_operation();
     num = [];
     calculator_screen.innerHTML = 0;
+})
+
+modal_error_close.addEventListener("click", function() {
+    modal_error.hidden = true;
 })
 
 function update_score() {
@@ -104,7 +120,7 @@ function update_timer() {
 }
 
 function set_operation() {
-    let [num1, op, num2, sol] = random_operation();
+    [num1, op, num2, sol] = random_operation();
     operation_screen.innerHTML = num1 + " " + op + " " + num2 + " =";
     operation_solution = sol;
 }
@@ -113,7 +129,7 @@ function random_operation() {
     let random_num_1 = Math.floor(Math.random() * 10) + 1;
     let random_num_2 = Math.floor(Math.random() * 10) + 1;
 
-    let random_operator = ["+", "-", "*", "/"][Math.floor(Math.random() * 4) + 0];
+    let random_operator = ["+", "-", "x", "/"][Math.floor(Math.random() * 4) + 0];
 
     let solution;
     if(random_operator == "+") {
@@ -125,7 +141,7 @@ function random_operation() {
             solution = random_num_2 - random_num_1;
             return [random_num_2, random_operator, random_num_1, solution];
         }
-    } else if(random_operator == "*") {
+    } else if(random_operator == "x") {
         solution = random_num_1 * random_num_2;
     } else {
         solution = random_num_1 * random_num_2;

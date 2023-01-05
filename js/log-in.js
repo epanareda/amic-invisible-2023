@@ -11,13 +11,13 @@ btn.addEventListener("click", function() {
     // console.log(user.value);
     // console.log(password.value);
     // modal.hidden = false;
-    if(user.value == "participant_01" && password.value == "e") {
+    if(user.value == "participant_0304" && password.value == "avkzjutkS2Hv5SPgpF7B") {
         user_name.innerHTML = "ESTEVE ROIG ALBERTI";
-        user_link.href = "introduction.html";
+        user_link.href = "introduction-esteve.html";
         modal.hidden = false;
-    } else if(user.value == "participant_02" && password.value == "1") {
+    } else if(user.value == "participant_0182" && password.value == "njnNiDj4u6VyweiBGqxN") {
         user_name.innerHTML = "EDUARD ROIG SOLA";
-        user_link.href = "introduction.html";
+        user_link.href = "introduction-eduard.html";
         modal.hidden = false;
     } else {
         alert("L'usuari o el mot de pas són incorrectes, estigues al lloro!");

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reis / amic invisible 2023</title>
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body class="overflow-hidden">
+    <div class="calculator-header-height fw-bold d-flex justify-content-center align-items-center mx-5 text-center">
+            <h1 class="fw-bold">
+                CALCULADORA HUMANA
+            </h1>
+    </div>
+    
+
+    <!-- <hr class="mx-5"> -->
+
+    <div class="container calculator-score-height">
+        <div class="row">
+            <div class="col-7">
+                <p class="p-0 m-0 ps-2">
+                    Temps restant: <strong id="seconds">60</strong><strong>.</strong><strong id="mil-seconds">00</strong>s
+                </p>
+            </div>
+            <div class="col">
+                <p class="p-0 m-0 ps-3">
+                    Puntuació: <strong id="score">00</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-absolute w-100 calculator-height bottom-0 left-0 border bg-warning pt-3">
+        <div class="container">
+            <div class="row calculator-y-margins bg-light rounded mx-3 position-relative calculator-screen-height">
+                <div id="operation-screen" class="col overflow-hidden position-absolute top-0 left-0 d-flex h-100 w-100 justify-content-start align-items-center px-5 calculator-btn text-secondary">
+                    10 x 10 =
+                </div>
+                <div id="calculator-screen" class="col overflow-hidden position-absolute top-0 left-0 d-flex h-100 w-100 justify-content-end align-items-center px-5 calculator-btn fw-bold">
+                    0
+                </div>
+            </div>
+            <div class="row mx-1 my-3">
+                <div class="col">
+                    <button id="btn-7" class="btn btn-secondary w-100 calculator-btn d-flex justify-content-center align-items-center">
+                        7
+                    </button>
+                </div>
+                <div class="col">
+                    <button id="btn-8" class="btn btn-secondary w-100 calculator-btn d-flex justify-content-center align-items-center">
+                        8
+                    </button>
+                </div>
+                <div class="col">
+                    <button id="btn-9" class="btn btn-secondary w-100 calculator-btn d-flex justify-content-center align-items-center">
+                        9
+                    </button>
+                </div>
+            </div>
+            <div class="row mx-1 my-3">
+                <div class="col">
+                    <button id="btn-4" class="btn btn-secondary w-100 calculator-btn d-flex justify-content-center align-items-center">
+                        4
+                    </button>
+                </div>
+                <div class="col">
+                    <button id="btn-5" class="btn btn-secondary w-100 calculator-btn d-flex justify-content-center align-items-center">
+                        5
+                    </button>
+                </div>
+                <div class="col">
+                    <button id="btn-6" class="btn btn-secondary w-100 calculator-btn d-flex justify-content-center align-items-center">
+                        6
+                    </button>
+                </div>
+            </div>
+            <div class="row mx-1 my-3">
+                <div class="col">
+                    <button id="btn-1" class="btn btn-secondary w-100 calculator-btn d-flex justify-content-center align-items-center">
+                        1
+                    </button>
+                </div>
+                <div class="col">
+                    <button id="btn-2" class="btn btn-secondary w-100 calculator-btn d-flex justify-content-center align-items-center">
+                        2
+                    </button>
+                </div>
+                <div class="col">
+                    <button id="btn-3" class="btn btn-secondary w-100 calculator-btn d-flex justify-content-center align-items-center">
+                        3
+                    </button>
+                </div>
+            </div>
+            <div class="row mx-1 mt-3">
+                <div class="col-4">
+                    <button id="btn-0" class="btn btn-secondary w-100 calculator-btn d-flex justify-content-center align-items-center">
+                        0
+                    </button>
+                </div>
+                <div class="col-4">
+                    <button id="btn-delete" class="btn btn-danger w-100 calculator-checker d-flex justify-content-center align-items-center">
+                        BORRA
+                    </button>
+                </div>
+                <div class="col-4">
+                    <button id="btn-check" class="btn btn-primary w-100 calculator-checker d-flex justify-content-center align-items-center">
+                        CHECK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal ERROR -->
+    <div id="modal-error" class="overflow-hidden" hidden>
+        <div class="position-fixed top-0 h-100 w-100 bg-dark opacity-25">
+        </div>
+
+        <div class="position-fixed top-0 h-100 w-100 d-flex justify-content-center align-items-center pb-5">
+            <div class="container border border-3 rounded p-3 bg-white w-75 text-center">
+                <h4>
+                    INCORRECTE
+                </h4>
+                <hr>
+                <h6>
+                    El resultat correcte és:
+                    <br>
+                    <strong id="correct-result"></strong>
+                </h6>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button id="btn-close-error-modal" class="btn btn-primary mt-2 mb-2 ms-2 small-font-size">
+                        D'ACORD
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal FINISH -->
+    <div id="modal" class="overflow-hidden" hidden>
+        <div class="position-fixed top-0 h-100 w-100 bg-dark opacity-75">
+        </div>
+        <div class="position-fixed top-0 h-100 w-100 d-flex justify-content-center align-items-center pb-5">
+            <h1 class="display-1 fw-bold text-light">
+                TEMPS!
+            </h1>
+        </div>
+
+        <div id="modal-panel" class="position-fixed top-100 h-100 w-100 d-flex justify-content-center align-items-center pb-5">
+            <div class="container border border-3 rounded p-3 bg-white w-75 text-center">
+                <h4>
+                    Puntuació: <strong id="score-modal">00</strong>
+                </h4>
+                <hr>
+                <h6>
+                    Com has quedat?
+                </h6>
+                <div class="d-flex justify-content-center align-items-center">
+                    <a class="btn btn-primary mt-2 mb-4 ms-2 small-font-size" href="test-2-instructions-eduard.html">
+                        GUANYADOR
+                    </a>
+                    <a class="btn btn-danger mt-2 mb-4 ms-2 small-font-size" href="test-2-loser-eduard.html">
+                        PERDEDOR
+                    </a>
+                </div>
+                <h6>
+                    O heu empatat?
+                </h6>
+                <div class="d-flex justify-content-between align-items-center flex-column">
+                    <a class="btn btn-secondary mt-2 mb-2 small-font-size" href="test-1-eduard.html">
+                        DESEMPATAR
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="js/test-1.js"></script>
+</html>
