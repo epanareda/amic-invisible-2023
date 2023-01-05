@@ -23,7 +23,7 @@ let operation_solution;
 let num = [];
 let num1, op, num2, sol;
 let score = 0;
-let end_time = new Date().getTime() + (1 * 1000);
+let end_time = new Date().getTime() + (60 * 1000);
 
 set_operation();
 let timer = setInterval(update_timer, 10);
