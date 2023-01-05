@@ -12,7 +12,7 @@ close_modal_btn.addEventListener("click", function() {
 })
 
 let audio_btn = document.getElementById("audio-btn");
-let audio = new Audio("../sounds/test-1-instructions.wav");
+let audio = new Audio("../test-1-instructions.mp3");
 
 audio_btn.addEventListener("click", function() {
     if(audio.paused) {

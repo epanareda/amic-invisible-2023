@@ -8,8 +8,8 @@ let calculator_screen = document.getElementById("calculator-screen");
 let btn_delete = document.getElementById("btn-delete");
 let btn_check = document.getElementById("btn-check");
 
-let correct_sound = new Audio("../sounds/correct.mp3");
-let incorrect_sound = new Audio("../sounds/incorrect.mp3");
+let correct_sound = new Audio("../correct.mp3");
+let incorrect_sound = new Audio("../incorrect.mp3");
 
 let modal_error = document.getElementById("modal-error");
 let correct_result = document.getElementById("correct-result");

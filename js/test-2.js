@@ -1,5 +1,5 @@
 let audio_btn = document.getElementById("audio-btn");
-let audio = new Audio("../sounds/test-2.wav");
+let audio = new Audio("../test-2.mp3");
 
 audio_btn.addEventListener("click", function() {
     if(audio.paused) {
