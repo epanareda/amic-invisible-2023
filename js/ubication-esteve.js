@@ -1,5 +1,5 @@
 let audio_btn = document.getElementById("audio-btn");
-let audio = new Audio("../sounds/ubication-esteve.mp3");
+let audio = new Audio("../sounds/ubication-esteve.wav");
 
 audio_btn.addEventListener("click", function() {
     if(audio.paused) {
