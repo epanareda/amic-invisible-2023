@@ -87,7 +87,7 @@ function update_score() {
 function update_timer() {
     let now = new Date().getTime();
     let time_left = end_time - now;
-    console.log(end_time - now);
+    // console.log(end_time - now);
 
     let seconds = Math.floor((time_left % (60 * 1000)) / 1000);
     let mil_seconds = Math.floor((time_left % 1000) / 10);
